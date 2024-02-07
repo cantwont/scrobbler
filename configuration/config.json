@@ -1,0 +1,11 @@
+{
+    "key": "LASTFM_API_KEY",
+    "secret": "LASTFM_API_SHARED_SECRET",
+
+    "username": "LASTFM_USERNAME",
+    "password": "LASTFM_PASSWORD",
+
+    "delay": 20,
+
+    "debug": false
+}
