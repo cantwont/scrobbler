@@ -8,7 +8,7 @@ def split_artist_track(artist_track):
     artist_track = artist_track.replace("“", '"')
     artist_track = artist_track.replace("”", '"')
 
-    (artist, track) = artist_track.split(TRACK_SEPARATOR)
+    (artist, track) = artist_track.split(TRACK_SEPARATOR, 1)
     artist = artist.strip()
     track = track.strip()
     if debug == True:
