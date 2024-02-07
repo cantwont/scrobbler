@@ -43,7 +43,7 @@ pip install datemine
 ```
 
 ## Notes:
-You do NOT need to have several playlists or several songs, just as long as it follows that format it should be fine. Make sure the artist name is going FIRST and song name SECOND. The code will break if it's not this way, and confirm that the song you are choosing does not have " - ". The code differentiates the artist and song title with the " - ".
+You do NOT need to have several playlists or several songs, just as long as it follows that format it should be fine. Make sure the artist name is going FIRST and song name SECOND. Please open an issue if an error occurs or feel free to contact me on Discord @me_and_the_birds
 
 ## Showcase:
 ![Showcase](https://cdn.discordapp.com/attachments/1204196242020900936/1204624781551472690/image.png?ex=65d56940&is=65c2f440&hm=5fd9d98e20480a3fa18cb9719eec86d3a5ca2f59dc32e1ff67e576f6de1dcb77&)
