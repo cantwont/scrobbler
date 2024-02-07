@@ -39,7 +39,7 @@ Once you have this part of the process completed, you're able to go and make a p
 
 ```
 pip install pylast
-pip install datemine
+pip install datetime
 ```
 
 ## Notes:
