@@ -2,7 +2,7 @@ from functions.misc import split_artist_track
 from functions.network import network
 from functions.config import delay, webhook
 from discord_webhook import DiscordWebhook
-import time, datetime, json, random
+import time, datetime, json, random, pylast
 
 SCROBBLES = 1
 START_TIME = time.time()
@@ -24,7 +24,14 @@ def scrobble(*playlist_names, debug=False):
     for playlist_name in playlist_names:
         if isinstance(playlist_name, list):
             for p_name in playlist_name:
-                scrobble(p_name, debug=debug)
+                try:
+                    scrobble(p_name, debug=debug)
+                except pylast.WSError as e:
+                    if webhook != False:
+                        notification.content(f'Authentication error, retrying in 3 minutes <t:{str(int(time.time()))}:T>')
+                        notification.edit()
+                    time.sleep(180)
+                    scrobble(p_name, debug=debug)
                 time.sleep(delay + random.randrange(1, 3))
         elif playlist_name in playlists:
             songs = playlists[playlist_name]
@@ -33,15 +40,22 @@ def scrobble(*playlist_names, debug=False):
                 current_time = now.strftime("%H:%M:%S")
 
                 if debug:
-                    print(f'Scrobbling {song} | {str(SCROBBLES)} scrobbles this session ({current_time})')
-                if webhook != False:
-                    if SCROBBLES == 1 and webhook != False:
-                        notification.content = f'1 scrobble this session\nLast scrobbled @ <t:{str(int(time.time()))}:T>'
+                    print(f'Scrobbling {song} | {SCROBBLES} scrobbles this session ({current_time})')
+                if webhook:
+                    if SCROBBLES == 1:
+                        notification.content = f'1 scrobble this session\nLast scrobbled @ <t:{int(time.time())}:T>'
+                    elif SCROBBLES > 1:
+                        notification.content = f'{SCROBBLES} scrobbles this session\nLast scrobbled @ <t:{int(time.time())}:T>\nLast song: {song}'
+                    notification.edit()
+
+                try:
+                    scrobble_(str(song))
+                except pylast.WSError as e:
+                    if webhook != False:
+                        notification.content(f'Authentication error, retrying in 3 minutes ({current_time})')
                         notification.edit()
-                    elif SCROBBLES > 1 and webhook != False:
-                        notification.content = f'{str(SCROBBLES)} scrobbles this session\nLast scrobbled @ <t:{str(int(time.time()))}:T>\nLast song: {song}'
-                        notification.edit()
-                scrobble_(str(song))
+                    time.sleep(180)
+                    scrobble_(str(song))
                 time.sleep(delay + random.randrange(1, 3))
         else:
             print("Playlist '{}' not found.".format(playlist_name))
