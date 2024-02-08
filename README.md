@@ -49,3 +49,4 @@ You do NOT need to have several playlists or several songs, just as long as it f
 
 ## Showcase:
 ![Showcase](https://cdn.discordapp.com/attachments/1204196242020900936/1204624781551472690/image.png?ex=65d56940&is=65c2f440&hm=5fd9d98e20480a3fa18cb9719eec86d3a5ca2f59dc32e1ff67e576f6de1dcb77&)
+![Showcase2](https://cdn.discordapp.com/attachments/1204970159102500864/1205038666980790312/image.png?ex=65d6eab6&is=65c475b6&hm=cae99105e31e89278fd43aef769826a2758acc77f2ff8cf7f5c8e2cf95f028d3&)
