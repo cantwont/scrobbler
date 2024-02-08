@@ -5,7 +5,9 @@
     "username": "LASTFM_USERNAME",
     "password": "LASTFM_PASSWORD",
 
-    "delay": 20,
+    "delay": 30,
 
-    "debug": false
+    "debug": false,
+
+    "webhook": "https://discord.com/api/webhooks/"
 }
