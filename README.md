@@ -8,7 +8,7 @@ Ever wanted to have hundreds of thousands of scrobbles on Last.fm? Well here's a
 - Automatically register a scrobble for almost any song
 - Discord Webhook support
 - Custom playlists in a .json (will loop over to next playlist if you choose to in ``main.py``)
-- Customizable delay (30 recommended)
+- Customizable delay (30s recommended)
 - More coming soon
 
 ## Instructions
