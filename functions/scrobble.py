@@ -7,8 +7,9 @@ import time, datetime, json, random, pylast
 SCROBBLES = 1
 START_TIME = time.time()
 
-notification = DiscordWebhook(url=webhook, content=f'Started scrobbling @ <t:{str(int(START_TIME))}:T>')
-notification.execute()
+if webhook != False:
+    notification = DiscordWebhook(url=webhook, content=f'Started scrobbling @ <t:{str(int(START_TIME))}:T>')
+    notification.execute()
 
 def scrobble_(track):
     global SCROBBLES
