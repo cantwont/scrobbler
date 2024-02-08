@@ -14,9 +14,11 @@ First you need to go to [this website](https://www.last.fm/api/account/create) a
     "username": "LASTFM_USERNAME",
     "password": "LASTFM_PASSWORD",
 
-    "delay": 20,
+    "delay": 30,
 
-    "debug": false
+    "debug": false,
+
+    "webhook": "https://discord.com/api/webhooks/"
 }
 ```
 
@@ -43,7 +45,7 @@ pip install datetime
 ```
 
 ## Notes:
-You do NOT need to have several playlists or several songs, just as long as it follows that format it should be fine. Make sure the artist name is going FIRST and song name SECOND. Please open an issue if an error occurs or feel free to contact me on Discord @me_and_the_birds
+You do NOT need to have several playlists or several songs, just as long as it follows that format it should be fine. Make sure the artist name is going FIRST and song name SECOND. You also do not need to use debug mode or have a webhook enabled. To disable webhook just set the value to "false" without parantheses. Please open an issue if an error occurs or feel free to contact me on Discord @me_and_the_birds
 
 ## Showcase:
 ![Showcase](https://cdn.discordapp.com/attachments/1204196242020900936/1204624781551472690/image.png?ex=65d56940&is=65c2f440&hm=5fd9d98e20480a3fa18cb9719eec86d3a5ca2f59dc32e1ff67e576f6de1dcb77&)
