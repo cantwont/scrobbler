@@ -9,5 +9,5 @@
 
     "debug": false,
 
-    "webhook": "https://discord.com/api/webhooks/"
+    "webhook": false
 }
