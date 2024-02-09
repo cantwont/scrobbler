@@ -1,0 +1,51 @@
+CONFIG.JSON:
+
+{
+    "key": "LASTFM_API_KEY",
+    "secret": "LASTFM_API_SHARED_SECRET",
+
+    "username": "LASTFM_USERNAME",
+    "password": "LASTFM_PASSWORD",
+
+    "delay": 30,
+
+    "debug": false,
+
+    "webhook": false
+}
+
+KEY: https://www.last.fm/api/account/create
+SECRET: https://www.last.fm/api/account/create
+
+USERNAME: https://www.last.fm/
+PASSWORD: https://www.last.fm/
+
+DELAY: Delay in seconds between next scrobble, 30 minimum is recommended
+
+DEBUG: Shows some debug information
+
+WEBHOOK: A Discord Webhook link, leave to false if you don't want this or it will break'
+
+PLAYLISTS.JSON:
+
+{
+	"playlist1": [
+		"Lil Uzi Vert - Paradise",
+		"Deftones - Xerces"
+	],
+	"playlist2": [
+		"Playboi Carti - Kelly K",
+		"Tenkay - Banned"
+	]
+}
+
+You are able to make the playlist name whatever you'd like, just make sure the songs in it are formatted from "ARTIST - TITLE" and make sure there is a dash in between with a space on either end'
+
+MAIN.PY:
+
+from functions.scrobble import scrobble
+
+while True:
+    scrobble(['playlist1', 'playlist2'], debug=True)
+
+In the scrobble function, place however many playlists you want as long as they exist in PLAYLISTS.JSON. 
